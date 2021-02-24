@@ -26,3 +26,6 @@ https://github.com/cabhijith/GPT-3_Docs/blob/master/Fine-Tune.org
 ** Tooling
 *** =pen.el= : _Prompt engineering_ in emacs
 - http://github.com/mullikine/pen.el
+
+** Links
+- https://news.ycombinator.com/item?id=23723687
