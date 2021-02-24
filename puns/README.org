@@ -69,7 +69,6 @@ A random number of jokes.
 #+END_SRC
 
 ***** Hyperparameters
-
 #+BEGIN_SRC sh -n :sps bash :async :results none
   v +/"I initially trained it" "$MYGIT/cabhijith/GPT-3_Docs/examples_finetuning/harry.md"
 #+END_SRC
