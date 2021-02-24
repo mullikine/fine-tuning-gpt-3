@@ -1,5 +1,7 @@
 * Fine-tuning GPT-3
 ** Puns
+[[./puns/README.org]]
+
 #+BEGIN_SRC text -n :async :results verbatim code
   What do you call a guy with no arms and no legs sitting at your doorstep? Matt.
   What do you call a guy with no arms or legs floating in your pool? Bob.
