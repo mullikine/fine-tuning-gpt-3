@@ -56,7 +56,7 @@ A random number of jokes.
       -t data/train_puns.jsonl \
       --val data/test_puns.jsonl \
       --num-epochs 1 \
-      -e ada-abhijith-chandran-ft-c2 \
+      -e $(myrc .openai_training_engine_name) \
       -m ada \
       --batch-size 2 \
       --val-batch-size 1 \
