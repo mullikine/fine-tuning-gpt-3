@@ -1,4 +1,10 @@
 * Fine-tuning GPT-3
+** External documentation
+https://github.com/cabhijith/GPT-3_Docs/blob/master/Fine-Tune.org
+
+** External examples
+- https://github.com/cabhijith/GPT-3_Docs/blob/master/examples_finetuning/harry.md
+
 ** Puns
 [[./puns/README.org]]
 
