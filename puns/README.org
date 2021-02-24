@@ -10,8 +10,8 @@
 |---------|
 | =jsonl= |
 
-**** Original source
-https://github.com/taivop/joke-dataset
+**** Sources
+- https://github.com/taivop/joke-dataset
 
 **** Naive approach
 #+BEGIN_SRC python -n :i python3.6 :async :results verbatim code
