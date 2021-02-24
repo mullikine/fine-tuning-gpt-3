@@ -123,12 +123,14 @@ https://github.com/mullikine/pen.el
 http://github.com/mullikine/fine-tuning-gpt-3
 
 *** What is the task that you want to fine-tune? *
-Generative: can't fit enough examples in the prompt
-Other: I would like to automate the fine-
-tuning process in emacs. I would also like to
-get GPT-3 to generate puns after seeing some
-examples of them. I would also like to train
-GPT-3 to speak in puns.    
+#+BEGIN_SRC text -n :async :results verbatim code
+  Generative: can't fit enough examples in the prompt
+  Other: I would like to automate the fine-
+  tuning process in emacs. I would also like to
+  get GPT-3 to generate puns after seeing some
+  examples of them. I would also like to train
+  GPT-3 to speak in puns.    
+#+END_SRC
 
 *** Why do you require fine-tuning for this use-case?
 The completions I am getting from the API are
