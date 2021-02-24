@@ -119,8 +119,8 @@ I am working on an emacs mode for prompt-
 engineering and training GPT-3 with the OpenAI
 API. I would also like to train GPT-3 to speak
 in puns.
-https://github.com/mullikine/pen.el
-http://github.com/mullikine/fine-tuning-gpt-3
+- https://github.com/mullikine/pen.el
+- http://github.com/mullikine/fine-tuning-gpt-3
 
 *** What is the task that you want to fine-tune? *
 #+BEGIN_SRC text -n :async :results verbatim code
@@ -134,13 +134,14 @@ http://github.com/mullikine/fine-tuning-gpt-3
 
 *** Why do you require fine-tuning for this use-case?
 The completions I am getting from the API are
-repetetive and do not contain puns. I would
-like an engine so that I can fine-tune GPT-3
-to produce puns, and in that process develop
-tooling to do more fine-tuning.
+repetetive and do not contain puns.
 
-https://github.com/mullikine/pen.el
-https://github.com/mullikine/fine-tuning-gpt-3
+I would like an engine so that I can fine-tune
+GPT-3 to produce puns, and in that process
+develop tooling to do more fine-tuning.
+
+- https://github.com/mullikine/pen.el
+- https://github.com/mullikine/fine-tuning-gpt-3
 
 *** How many examples do you have and what is the typical number of words per example? *
 n examples: 200000,  average words per example: 40
