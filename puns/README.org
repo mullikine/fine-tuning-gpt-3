@@ -1,38 +1,4 @@
 * Fine-tuning GPT-3 to generate puns
-** Application
-*** Size of dataset
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  cat $MYGIT/taivop/joke-dataset/reddit_jokes.json | jq -r 'length'
-  cat $MYGIT/taivop/joke-dataset/stupidstuff.json | jq -r 'length'
-  cat $MYGIT/taivop/joke-dataset/wocka.json | jq -r 'length'
-#+END_SRC
-
-#+RESULTS:
-#+begin_src bash
-194553
-3773
-10019
-#+end_src
-
-*** Average length of each joke
-#+BEGIN_SRC bash -n :i bash :async :results verbatim code
-  cat $MYGIT/taivop/joke-dataset/reddit_jokes.json | jq -r '.[].body|length'| jq -s add/length
-#+END_SRC
-
-#+RESULTS:
-#+begin_src bash
-204.60585547382976
-#+end_src
-
-*** Why do you require fine-tuning for this use-case?
-The completions I am getting from the API are
-repetetive and do not contain puns. I would
-like an engine so that I can fine-tune GPT-3
-to produce puns, and in that process develop
-tooling to do more fine-tuning.
-https://github.com/mullikine/pen.el
-https://github.com/mullikine/fine-tuning-gpt-3
-
 ** Aims
 *** Train GPT-3 to continue on sequences of puns
 
@@ -117,3 +83,81 @@ To avoid over-fitting (using the same characters), using a lower learning rate (
 
 ** TODO Testing
 List prompt and completion.
+
+** Application
+*** Size of dataset
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  cat $MYGIT/taivop/joke-dataset/reddit_jokes.json | jq -r 'length'
+  cat $MYGIT/taivop/joke-dataset/stupidstuff.json | jq -r 'length'
+  cat $MYGIT/taivop/joke-dataset/wocka.json | jq -r 'length'
+#+END_SRC
+
+#+RESULTS:
+#+begin_src bash
+194553
+3773
+10019
+#+end_src
+
+*** Average length of each joke
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  cat $MYGIT/taivop/joke-dataset/reddit_jokes.json | jq -r '.[].body|length'| jq -s add/length
+#+END_SRC
+
+#+RESULTS:
+#+begin_src bashg
+204.60585547382976
+#+end_src
+
+*** Email address
+=mullikine@gmail.com=
+
+*** Name
+Shane Mulligan
+
+*** Please tell us about your product (or use-case)
+I am working on an emacs mode for prompt-
+engineering and training GPT-3 with the OpenAI
+API. I would also like to train GPT-3 to speak
+in puns.
+https://github.com/mullikine/pen.el
+http://github.com/mullikine/fine-tuning-gpt-3
+
+*** What is the task that you want to fine-tune? *
+Generative: can't fit enough examples in the prompt
+Other: I would like to automate the fine-
+tuning process in emacs. I would also like to
+get GPT-3 to generate puns after seeing some
+examples of them. I would also like to train
+GPT-3 to speak in puns.    
+
+*** Why do you require fine-tuning for this use-case?
+The completions I am getting from the API are
+repetetive and do not contain puns. I would
+like an engine so that I can fine-tune GPT-3
+to produce puns, and in that process develop
+tooling to do more fine-tuning.
+
+https://github.com/mullikine/pen.el
+https://github.com/mullikine/fine-tuning-gpt-3
+
+*** How many examples do you have and what is the typical number of words per example? *
+n examples: 200000,  average words per example: 40
+
+*** What is the size of the dataset (MB)?
+2.5
+
+*** What performance needs to be met in order to move to production with the fine-tuned model? *
+I will NOT be moving to production.
+
+*** What are the latency requirements for the fine-tuned model?
+No requirements. It can be high latency, I don't mind.
+
+*** What is the expected request volume?
+100 requests per day (for myself).
+
+*** How many different fine-tuned models would you like to use?
+2
+
+*** Security constraints?
+No. I will not be applying it any sensitive information.
