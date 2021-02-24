@@ -1,4 +1,7 @@
 * Fine-tuning GPT-3
+** Glossary
+[[./glossary.txt]]
+
 ** External documentation
 https://github.com/cabhijith/GPT-3_Docs/blob/master/Fine-Tune.org
 
