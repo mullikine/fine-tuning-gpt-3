@@ -1,4 +1,41 @@
 * Fine-tuning GPT-3 to generate puns
+** Aims
+*** Train GPT-3 to continue on sequences of puns
+
+*** Train GPT-3 to speak in puns
+
+** Training
+*** Data
+**** Naive approach
+#+BEGIN_SRC python -n :i python3.6 :async :results verbatim code
+  [{"data" : "joke set 1"},
+   {"data": "joke set 2"}
+#+END_SRC
+
+**** Better approach
+One element resembles a prompt and the other its completion.
+#+BEGIN_SRC python -n :i python3.6 :async :results verbatim code
+  [{'data': {'text_list': ["Starting of Page-1",
+     "Remaining Part of Page-1"],
+    'loss_weights': [0.3, 0.7]}},
+  {'data': {'text_list': ['Starting of Page-2',
+     "Remaining part of Page-2"],
+    'loss_weights': [0.3, 0.7]}}
+#+END_SRC
+
+ The prompt was selected as a random amount of text from each page (between 20-50%). I also added ```loss_weights``` giving more importance to the completion rather than the prompt. This worked much better than the earlier approach. Command used to train: 
+ ```python 
+ !openai-ft -t data/train_harry.jsonl --val data/test_harry.jsonl --num-epochs 1 -e ada-abhijith-chandran-ft-c2 -m ada --batch-size 2 --val-batch-size 1 --snapshots-every 15 --num-completions 1 --completions-every 2 -s 0.01 --log-path logs -v 
+```
+I initially trained it with the default learning rate for 1 epoch but found that the model overfitted a bit. Instead of learning the style it completed prompts using the same characters from Harry Potter. Scaling the learning rate down by 100x worked much better. 
+
+## Testing 
+**Prompt**: Standing in the doorway, she stared at the empty hallways. Suddenly 
+
+**Completion**: the lights of her office went out. They were replaced by a blank, dark room. Overhanging the ceiling were thick gray curtains, and the hole in the ceiling's center sparkled with yellowish reflection. She had never seen one like that 
+
+It does seem to be getting the fictious/mystery writing style and produces some fantastic and intriguing completions. Also, this is the smallest model ```ada``` of the GPT-3 family.  
+
 ** Example
 #+BEGIN_SRC text -n :async :results verbatim code
   What do you call a guy with no arms and no legs sitting at your doorstep? Matt.
