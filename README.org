@@ -1,13 +1,4 @@
 * Fine-tuning GPT-3
-** Glossary
-[[./glossary.txt]]
-
-** External documentation
-https://github.com/cabhijith/GPT-3_Docs/blob/master/Fine-Tune.org
-
-** External examples
-- https://github.com/cabhijith/GPT-3_Docs/blob/master/examples_finetuning/harry.md
-
 ** Puns - _Fine-tuning GPT-3 to generate puns_
 
 [[./puns/README.org]]
@@ -20,3 +11,12 @@ https://github.com/cabhijith/GPT-3_Docs/blob/master/Fine-Tune.org
   What do you call a guy with no arms or legs? Names.
   What do you call a cow with no legs? Ground Beef. 
 #+END_SRC
+
+** Glossary
+[[./glossary.txt]]
+
+** External documentation
+https://github.com/cabhijith/GPT-3_Docs/blob/master/Fine-Tune.org
+
+** External examples
+- https://github.com/cabhijith/GPT-3_Docs/blob/master/examples_finetuning/harry.md
