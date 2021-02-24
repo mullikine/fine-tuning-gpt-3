@@ -6,6 +6,10 @@
 
 ** Training
 *** Data
+| format  |
+|---------|
+| =jsonl= |
+
 **** Naive approach
 #+BEGIN_SRC python -n :i python3.6 :async :results verbatim code
   [{"data" : "joke set 1"},
