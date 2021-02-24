@@ -1,8 +1,7 @@
 * Fine-tuning GPT-3 to generate puns
 ** Aims
-*** Train GPT-3 to continue on sequences of puns
-
-*** Train GPT-3 to speak in puns
+- Train GPT-3 to continue on sequences of puns
+- Train GPT-3 to speak in puns
 
 ** Training
 *** Data
