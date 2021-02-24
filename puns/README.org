@@ -22,12 +22,8 @@
 The prompt is a set of jokes followed by more set of jokes of the same type.
 
 #+BEGIN_SRC python -n :i python3.6 :async :results verbatim code
-  [{'data': {'text_list': ["Starting of joke set 1",
-    "Remaining of joke set 1"],
-    'loss_weights': [0.3, 0.7]}},
-   {'data': {'text_list': ['Starting of joke set 2",
-    "Remaining of joke set 2"],
-    'loss_weights': [0.3, 0.7]}}]
+  [{'data': {'text_list': ["Starting of joke set 1", "Remaining of joke set 1"], 'loss_weights': [0.3, 0.7]}},
+   {'data': {'text_list': ['Starting of joke set 2", "Remaining of joke set 2"], 'loss_weights': [0.3, 0.7]}}]
 #+END_SRC
 
 The loss weights are set such that the
