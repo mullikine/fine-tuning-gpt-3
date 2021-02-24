@@ -7,5 +7,5 @@
   What do you call somebody with no body and no nose? Nobody knows
   What do you call a cow with no legs? Ground Beef. 
   What do you call a guy with no arms or legs hanging off your wall? Art.
-  What do you call a guy with no arms or legs? names.
+  What do you call a guy with no arms or legs? Names.
 #+END_SRC
