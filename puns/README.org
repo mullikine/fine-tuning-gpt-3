@@ -13,7 +13,10 @@
 #+END_SRC
 
 **** Better approach
-One element resembles a prompt and the other its completion.
++ =text_list= :: One element resembles a _prompt_ and the other its _completion_.
+
+The prompt is a set of jokes followed by more set of jokes of the same type.
+
 #+BEGIN_SRC python -n :i python3.6 :async :results verbatim code
   [{'data': {'text_list': ["Starting of Page-1",
      "Remaining Part of Page-1"],
@@ -23,9 +26,43 @@ One element resembles a prompt and the other its completion.
     'loss_weights': [0.3, 0.7]}}
 #+END_SRC
 
- The prompt was selected as a random amount of text from each page (between 20-50%). I also added ```loss_weights``` giving more importance to the completion rather than the prompt. This worked much better than the earlier approach. Command used to train: 
- ```python 
- !openai-ft -t data/train_harry.jsonl --val data/test_harry.jsonl --num-epochs 1 -e ada-abhijith-chandran-ft-c2 -m ada --batch-size 2 --val-batch-size 1 --snapshots-every 15 --num-completions 1 --completions-every 2 -s 0.01 --log-path logs -v 
+The loss weights are set such that the
+completion is given more importance (=0.7=)
+than the prompt (=0.3=).
+
+***** Prompt
+A random number of jokes.
+
+#+BEGIN_SRC text -n :async :results verbatim code
+  What do you call a guy with no arms and no legs sitting at your doorstep? Matt.
+  What do you call a guy with no arms or legs floating in your pool? Bob.
+  What do you call a guy with no arms or legs hanging off your wall? Art.
+#+END_SRC
+
+***** Completion
+#+BEGIN_SRC text -n :async :results verbatim code
+  What do you call somebody with no body and no nose? Nobody knows
+  What do you call a guy with no arms or legs? Names.
+  What do you call a cow with no legs? Ground Beef. 
+#+END_SRC
+
+***** Training command
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  openai-ft \
+      -t data/train_harry.jsonl \
+      --val data/test_harry.jsonl \
+      --num-epochs 1 \
+      -e ada-abhijith-chandran-ft-c2 \
+      -m ada \
+      --batch-size 2 \
+      --val-batch-size 1 \
+      --snapshots-every 15 \
+      --num-completions 1 \
+      --completions-every 2 \
+      -s 0.01 \
+      --log-path logs \
+      -v
+#+END_SRC
 ```
 I initially trained it with the default learning rate for 1 epoch but found that the model overfitted a bit. Instead of learning the style it completed prompts using the same characters from Harry Potter. Scaling the learning rate down by 100x worked much better. 
 
