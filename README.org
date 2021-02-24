@@ -12,11 +12,12 @@
   What do you call a cow with no legs? Ground Beef. 
 #+END_SRC
 
-** Glossary
+** Docs
+*** Glossary
 [[./glossary.txt]]
 
-** External documentation
+*** External documentation
 https://github.com/cabhijith/GPT-3_Docs/blob/master/Fine-Tune.org
 
-** External examples
+*** External examples
 - https://github.com/cabhijith/GPT-3_Docs/blob/master/examples_finetuning/harry.md
