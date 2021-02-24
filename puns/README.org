@@ -1,5 +1,10 @@
 * Fine-tuning GPT-3 to generate puns
 ** Application
+*** Size of dataset
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  cat $MYGIT/taivop/joke-dataset/reddit_jokes.json | jq -r 'length'
+#+END_SRC
+
 *** Average length of each joke
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   cat $MYGIT/taivop/joke-dataset/reddit_jokes.json | jq -r '.[].body|length'| jq -s add/length
