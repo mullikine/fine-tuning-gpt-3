@@ -3,7 +3,16 @@
 *** Size of dataset
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
   cat $MYGIT/taivop/joke-dataset/reddit_jokes.json | jq -r 'length'
+  cat $MYGIT/taivop/joke-dataset/stupidstuff.json | jq -r 'length'
+  cat $MYGIT/taivop/joke-dataset/wocka.json | jq -r 'length'
 #+END_SRC
+
+#+RESULTS:
+#+begin_src bash
+194553
+3773
+10019
+#+end_src
 
 *** Average length of each joke
 #+BEGIN_SRC bash -n :i bash :async :results verbatim code
@@ -14,6 +23,15 @@
 #+begin_src bash
 204.60585547382976
 #+end_src
+
+*** Why do you require fine-tuning for this use-case?
+The completions I am getting from the API are
+repetetive and do not contain puns. I would
+like an engine so that I can fine-tune GPT-3
+to produce puns, and in that process develop
+tooling to do more fine-tuning.
+https://github.com/mullikine/pen.el
+https://github.com/mullikine/fine-tuning-gpt-3
 
 ** Aims
 *** Train GPT-3 to continue on sequences of puns
