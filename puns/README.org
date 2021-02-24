@@ -1,4 +1,14 @@
 * Fine-tuning GPT-3 to generate puns
+** Application
+#+BEGIN_SRC bash -n :i bash :async :results verbatim code
+  cat $MYGIT/taivop/joke-dataset/reddit_jokes.json | jq -r '.[].body|length'| jq -s add/length
+#+END_SRC
+
+#+RESULTS:
+#+begin_src bash
+204.60585547382976
+#+end_src
+
 ** Aims
 *** Train GPT-3 to continue on sequences of puns
 
